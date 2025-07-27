@@ -3,132 +3,159 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css/tailwind.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="bg-gray-100 flex items-center justify-center h-screen">
+  <body class="bg-gray-100 flex flex-row items-center justify-center h-screen">
+    <!-- Calculator Container  -->
     <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+      <!-- input box -->
       <div class="mb-4">
         <input
           type="text"
           id="display"
-          class="w-full p-3 text-right text-2xl bg-gray-200 rounded"
+          class="w-full p-3 bg-gray-400 rounded text-2xl text-white text-right"
           readonly
         />
       </div>
+      <!-- Button create -->
       <div class="grid grid-cols-4 gap-2">
         <button
           onclick="clearDisplay()"
-          class="bg-red-500 text-white p-3 rounded hover:bg-red-600"
+          class="text-white p-3 bg-red-500 hover:bg-red-700 rounded"
         >
           C
         </button>
         <button
           onclick="appendToDisplay('(')"
-          class="bg-gray-300 p-3 rounded hover:bg-gray-400"
+          class="p-3 bg-gray-300 hover:bg-gray-400 rounde"
         >
           (
         </button>
         <button
           onclick="appendToDisplay(')')"
-          class="bg-gray-300 p-3 rounded hover:bg-gray-400"
+          class="p-3 bg-gray-300 hover:bg-gray-400 rounded"
         >
           )
         </button>
         <button
-          onclick="appendToDisplay('/')"
-          class="bg-blue-500 text-white p-3 rounded hover:bg-blue-600"
+          onclick="appendToDisplay('^')"
+          class="p-3 bg-green-500 hover:bg-green-600 rounded"
         >
-          /
+          XOR
+        </button>
+        <button
+          onclick="appendToDisplay('**')"
+          class="p-3 bg-yellow-400 hover:bg-yellow-600 rounded"
+        >
+          exp
+        </button>
+        <button
+          onclick="appendToDisplay('&')"
+          class="p-3 bg-green-500 hover:bg-green-600 rounded"
+        >
+          AND
+        </button>
+        <button
+          onclick="appendToDisplay('|')"
+          class="p-3 bg-green-500 hover:bg-green-600 rounded"
+        >
+          OR
+        </button>
+        <button
+          onclick="appendToDisplay('~')"
+          class="p-3 bg-green-500 hover:bg-green-600 rounded"
+        >
+          NOT
         </button>
         <button
           onclick="appendToDisplay('7')"
-          class="bg-gray-300 p-3 rounded Hover:bg-gray-400"
+          class="p-3 bg-gray-300 hover:bg-gray-400 rounded"
         >
           7
         </button>
         <button
           onclick="appendToDisplay('8')"
-          class="bg-gray-300 p-3 rounded hover:bg-gray-400"
+          class="p-3 bg-gray-300 hover:bg-gray-400 rounded"
         >
           8
         </button>
         <button
           onclick="appendToDisplay('9')"
-          class="bg-gray-300 p-3 rounded hover:bg-gray-400"
+          class="p-3 bg-gray-300 hover:bg-gray-400 rounded"
         >
           9
         </button>
         <button
           onclick="appendToDisplay('*')"
-          class="bg-blue-500 text-white p-3 rounded hover:bg-blue-600"
+          class="p-3 bg-blue-500 hover:bg-blue-600 rounded"
         >
           *
         </button>
         <button
           onclick="appendToDisplay('4')"
-          class="bg-gray-300 p-3 rounded hover:bg-gray-400"
+          class="p-3 bg-gray-300 hover:bg-gray-400 rounded"
         >
           4
         </button>
         <button
           onclick="appendToDisplay('5')"
-          class="bg-gray-300 p-3 rounded hover:bg-gray-400"
+          class="p-3 bg-gray-300 hover:bg-gray-400 rounded"
         >
           5
         </button>
         <button
           onclick="appendToDisplay('6')"
-          class="bg-gray-300 p-3 rounded hover:bg-gray-400"
+          class="p-3 bg-gray-300 hover:bg-gray-400 rounded"
         >
           6
         </button>
         <button
           onclick="appendToDisplay('-')"
-          class="bg-blue-500 text-white p-3 rounded hover:bg-blue-600"
+          class="p-3 bg-blue-500 hover:bg-blue-600 rounded"
         >
           -
         </button>
         <button
           onclick="appendToDisplay('1')"
-          class="bg-gray-300 p-3 rounded hover:bg-gray-400"
+          class="p-3 bg-gray-300 hover:bg-gray-400 rounded"
         >
           1
         </button>
         <button
           onclick="appendToDisplay('2')"
-          class="bg-gray-300 p-3 rounded hover:bg-gray-400"
+          class="p-3 bg-gray-300 hover:bg-gray-400 rounded"
         >
           2
         </button>
         <button
           onclick="appendToDisplay('3')"
-          class="bg-gray-300 p-3 rounded hover:bg-gray-400"
+          class="p-3 bg-gray-300 hover:bg-gray-400 rounded"
         >
           3
         </button>
         <button
-          onclick="appendToDisplay('+')"
-          class="bg-blue-500 text-white p-3 rounded hover:bg-blue-600"
+          onclick="appendToDisplay('/')"
+          class="p-3 bg-blue-500 hover:bg-blue-600 rounded"
         >
-          +
+          /
         </button>
         <button
           onclick="appendToDisplay('0')"
-          class="bg-gray-300 p-3 rounded hover:bg-gray-400 col-span-2"
+          class="p-3 bg-gray-300 hover:bg-gray-400 rounded col-span-2"
         >
           0
         </button>
         <button
           onclick="appendToDisplay('.')"
-          class="bg-gray-300 p-3 rounded hover:bg-gray-400"
+          class="p-3 bg-gray-300 hover:bg-gray-400 rounded"
         >
           .
         </button>
         <button
-          onclick="calculate()"
-          class="bg-green-500 text-white p-3 rounded hover:bg-green-600"
+          onclick=" calculate()"
+          class="text-white p-3 bg-neutral-500 hover:bg-neutral-800 rounded"
         >
           =
         </button>
